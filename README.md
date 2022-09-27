@@ -1,6 +1,32 @@
-# Курсовая работа по web-разработке
+# Rest API
+## Структура директории
+```   
+├── cmd
+│   └── server
+│       └── main.go
+├── config
+│   └── configs.toml
+├── go.mod
+├── go.sum
+├── internal
+│   └── app
+│       ├── model
+│       │   └── model.go
+│       ├── server
+│       │   ├── config.go
+│       │   ├── server.go
+│       │   └── webserver.go
+│       └── store
+│           ├── errors.go
+│           ├── repository.go
+│           ├── store.go
+│           └── sqlstore
+│               └── store.go    
+```
 
-## Структура директории сайта 
+# Сайт
+
+## Структура директории
 ```
 ├── app
 │   ├── database
