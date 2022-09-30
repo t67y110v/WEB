@@ -21,10 +21,10 @@ func newDB(databaseURL string) (*sql.DB, error) {
 	log.Printf("Database initialization: %s\n", databaseURL)
 	db, err := sql.Open("postgres", databaseURL)
 	if err != nil {
-		return nil, nil
+		return nil, err
 	}
 	if err := db.Ping(); err != nil {
-		return nil, nil
+		return nil, err
 	}
 	return db, nil
 }

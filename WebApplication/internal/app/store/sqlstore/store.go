@@ -5,7 +5,7 @@ import (
 	"log"
 	"webgo/internal/app/store"
 
-	_ "github.com/jackc/pgx"
+	_ "github.com/lib/pq"
 )
 
 type Store struct {
