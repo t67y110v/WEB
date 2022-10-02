@@ -1,0 +1,81 @@
+{{define "auth"}}
+
+{{template "header"}}
+
+<style>
+.btn-outline-custom {
+    color: #7d52b6;
+    border-color: #7d52b6;
+}
+
+.btn-outline-custom:focus {
+    box-shadow: 0 0 0 0.2rem #b3a7a7;
+    -webkit-box-shadow: 0 0 0 0.2rem #b3a7a7;
+    outline: 0;
+}
+
+.btn-outline-custom:hover,
+.btn-outline-custom:active {
+    color: #fff;
+    background-color: #7d52b6;
+    border-color: #7d52b6;
+}
+
+:root {
+    --color2: #695fc2;
+    --color1: #a147bd;
+}
+
+
+</style>
+
+
+
+
+
+
+<section> 
+
+<div class="container"> 
+
+    <div class="row"> 
+
+        <div class="col-4"></div>
+        <div class="col-4">
+            <form action="/session" method="post">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Адрес электронной почты</label>
+                    <input type="email" name="email" class="form-control" placeholder="Введите почту"
+                        aria-describedby="email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                    <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+                        placeholder="Введите пароль">
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-outline-custom">Отправить</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+{{template "footer"}}
+
+
+{{end}}
