@@ -3,6 +3,8 @@ package server
 import (
 	"database/sql"
 	"log"
+	"os"
+	"os/signal"
 	store "webgo/internal/app/store/sqlstore"
 )
 
@@ -14,7 +16,8 @@ func Start(config *Config) error {
 	defer db.Close()
 	store := store.New(db)
 	server := newServer(store, config)
-	return server.router.Listen(config.BindAddr)
+	StartServerWithGracefulShutdown(server, config.BindAddr)
+	return nil
 }
 
 func newDB(databaseURL string) (*sql.DB, error) {
@@ -27,4 +30,23 @@ func newDB(databaseURL string) (*sql.DB, error) {
 		return nil, err
 	}
 	return db, nil
+}
+
+func StartServerWithGracefulShutdown(s *server, addr string) {
+	idleConnsClosed := make(chan struct{})
+	go func() {
+		sigint := make(chan os.Signal, 1)
+		signal.Notify(sigint, os.Interrupt)
+		<-sigint
+
+		if err := s.router.Shutdown(); err != nil {
+			s.logger.Warningf("Server is not shutting down! reason: %v", err)
+		}
+		close(idleConnsClosed)
+	}()
+	if err := s.router.Listen(addr); err != nil {
+		s.logger.Warningf("Server is not running! reason: %v", err)
+	}
+	<-idleConnsClosed
+
 }
