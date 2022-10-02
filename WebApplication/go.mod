@@ -6,7 +6,10 @@ require (
 	github.com/BurntSushi/toml v1.2.0 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
 	github.com/gofiber/fiber/v2 v2.38.1 // indirect
+	github.com/gofiber/jwt/v2 v2.2.7 // indirect
+	github.com/gofiber/jwt/v3 v3.3.1 // indirect
 	github.com/gofiber/template v1.7.1 // indirect
+	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
 	github.com/jackc/pgx v3.6.2+incompatible // indirect
 	github.com/klauspost/compress v1.15.11 // indirect
 	github.com/lib/pq v1.10.7 // indirect
