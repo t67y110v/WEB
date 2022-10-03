@@ -64,3 +64,7 @@ func (s *server) createSessionHandler(c *fiber.Ctx) error {
 	c.Locals("Authorization", "Beaver "+t)
 	return c.Next()
 }
+
+func (s *server) NotFound(c *fiber.Ctx) error {
+	return c.Status(404).SendFile("./wwwroot/private/404.html")
+}

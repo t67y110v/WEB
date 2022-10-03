@@ -53,6 +53,9 @@ func (s *server) configureRouter() {
 
 	s.router.Post("/session", s.createSessionHandler, s.mainHandler)
 	s.router.Get("/auth_user", s.authUserHandler, s.mainHandler)
+	s.router.Use(s.NotFound)
+	s.router.Static("/", "/wwwroot/public")
+
 	s.router.Use(logger.New())
 	s.router.Use(recover.New())
 
