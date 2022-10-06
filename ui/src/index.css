@@ -6,7 +6,12 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--color3);
+  --color1 : #05386B;
+  --color2 : #379683;
+  --color3 : #5CDB95;
+  --color4 : #8EE4AF;
+  --color5 : #EDF5E1;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,22 +20,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+
+
+
+body { 
+
+  background-color: var(--color3);
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   font-size: 3.2em;

@@ -1,9 +1,13 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  --color1 : #05386B;
+  --color2 : #379683;
+  --color3 : #5CDB95;
+  --color4 : #8EE4AF;
+  --color5 : #EDF5E1;
 }
+
 
 .logo {
   height: 6em;
@@ -26,11 +30,7 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
+
 
 .card {
   padding: 2em;

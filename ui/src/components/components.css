@@ -1,0 +1,31 @@
+#root {
+    margin: 0 auto;
+    text-align: center;
+    --color1: #05386B;
+    --color2: #379683;
+    --color3: #5CDB95;
+    --color4: #8EE4AF;
+    --color5: #EDF5E1;
+}
+
+
+
+
+.headersetup {
+    background: var(--color1);
+    background: url(src/assets/pattern.png), -moz-linear-gradient(left, var(--color1) 0%, var(--color2) 100%);
+    background: url(src/assets/pattern.png), -webkit-linear-gradient(left, var(--color1) 0%, var(--color2)100%);
+    background: url(src/assets/pattern.png), linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32fc46', endColorstr='#7db9e8', GradientType=1);
+    background-size: cover;
+
+}
+
+
+nav {
+    background-color: var(--color4);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: colo;
+    
+}

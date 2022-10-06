@@ -11,7 +11,7 @@ function AddUser({ mutate }: { mutate: KeyedMutator<User> }) {
             email: '',
             password: '',  
         }
-    })
+    })  
 
 
     async function createUser(values: { email: string ; password: string }) {
@@ -29,11 +29,7 @@ function AddUser({ mutate }: { mutate: KeyedMutator<User> }) {
     }
     return (
         <>
-            <Modal
-                opened={open}
-                onClose={() => setOpen(false)}
-                title="Вход в систему"
-            >
+         
                 <form onSubmit={form.onSubmit(createUser)}>
                     <TextInput
                         required
@@ -53,14 +49,9 @@ function AddUser({ mutate }: { mutate: KeyedMutator<User> }) {
                         ...form.getInputProps("password")
                         }
                     />
-                    <Button type="submit">Войти </Button>
+                    <Button fullWidth type="submit">Войти </Button>
                 </form>
-            </Modal>
-            <Group position="center" >
-                <Button fullWidth mb={12} onClick={() => setOpen(true)}>
-                    Войти 
-                </Button>
-            </Group>
+           
         </>
     )
 }
