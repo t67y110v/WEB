@@ -1,4 +1,4 @@
-# Rest API
+# Backend go-fiber
 ## Структура директории
 ```   
 ├── cmd
@@ -24,7 +24,7 @@
 │               └── store.go    
 ```
 
-# Сайт
+# Frontend React-TypeScript-Vite-Bootstrap-Mantine
 
 ## Структура директории
 ```
