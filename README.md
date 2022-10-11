@@ -1,3 +1,16 @@
+# Tech Stack
+- [Go](https://go.dev)
+- [React] (https://ru.reactjs.org/)
+- [PostgreSQL](https://www.postgresql.org)
+- [Docker](https://www.docker.com/)
+- [Fiber](https://github.com/gofiber/fiber)
+- [TypeScript] (https://www.typescriptlang.org/)
+- [Vite] (https://vitejs.dev/)
+- [Mantine] (https://mantine.dev/)
+- [Bootstrap 5] (https://getbootstrap.com/)
+
+
+
 # Backend go-fiber
 ## Структура директории
 ```   
@@ -104,12 +117,4 @@ docker-compose up
 
 CUSTOM="Air" docker-compose up # Использовать с  Air
 ```
-## Tech Stack
-- [Go](https://go.dev)
-- [PostgreSQL](https://www.postgresql.org)
-- [Docker](https://www.docker.com/)
-- [Fiber](https://github.com/gofiber/fiber)
-- [Ent](https://github.com/ent/ent)
-- [Fx](https://github.com/uber-go/fx)
-- [Zerolog](https://github.com/rs/zerolog)
-- [GoMock](https://github.com/golang/mock)
+
