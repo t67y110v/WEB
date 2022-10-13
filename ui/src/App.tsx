@@ -1,34 +1,22 @@
 
 import React, { useEffect, useState } from 'react';
-import { Box } from '@mantine/core'
 import './App.css'
-import useSWR from 'swr'
-import AddUser from './components/addUser';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navpanel from "./components/navpanel";
 import MyHeader from './components/header';
+import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
-
-const fetcher = (url: string) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
-
-export const ENDPOINT = "http://localhost:4000";
-
-
-export interface User {
-  email: string
-  password: string
-  token: string
-}
 
 function App() {
 
-  const { data, mutate } = useSWR<User>('healthcheck', fetcher)
   const [name, setName] = useState('');
 
   useEffect(() => {
     (
       async () => {
-        const response = await fetch('http://localhost:8000/api/user', {
+        const response = await fetch('http://localhost:4000/api/user', {
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
         });
@@ -40,26 +28,27 @@ function App() {
     )();
   });
 
-
   return (
-    <BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
 
 
-      <MyHeader name={name} setName={setName} />
-      
-            <Navpanel name={name} setName={setName} />
-          <div className="container">
-            <div className="row">
-              <div className="col-4"></div>
-              <div className="col-4">
-                 < AddUser mutate={mutate} />
-              </div>
-            </div>
-          </div>
-           
-       
+        <MyHeader name={name} setName={setName} />
+        <Navpanel name={name} setName={setName} />
+        <main className="form-signin">
+          <Routes>
+            <Route path="/home" element={<Home name={name} />} />
+            <Route path="/login" element={<Login setName={setName} />} />
+            <Route path="/register" element={<Register />} />
+            <Route path ="*" element= {<Register />}/>
+          </Routes>
 
-    </BrowserRouter>
+        </main>
+
+
+
+      </BrowserRouter>
+    </div>
   )
 
 

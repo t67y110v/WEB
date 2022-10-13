@@ -18,7 +18,8 @@
     background: url(src/assets/pattern.png), linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32fc46', endColorstr='#7db9e8', GradientType=1);
     background-size: cover;
-
+   
+    padding-bottom: 30px;
 }
 
 
@@ -28,4 +29,21 @@ nav {
     padding-bottom: 25px;
     color: colo;
     
+}
+.tx {
+color : var(--color1);
+font-weight: bold;
+
+}
+
+.tx-header {
+    color : var(--color5);
+    font-size: 175%;
+    font-weight: bold;
+}
+
+.btn-cr {
+
+color: #05386B;
+
 }

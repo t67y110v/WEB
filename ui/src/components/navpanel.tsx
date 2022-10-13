@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Box, NavLink, Button } from '@mantine/core';
 import './components.css'
-import { IconLogin, IconLogout } from '@tabler/icons';
+import { IconLogin, IconLogout, IconHome } from '@tabler/icons';
 
 
 const Navpanel = (props: { name: string, setName: (name: string) => void }) => {
@@ -25,10 +25,10 @@ const Navpanel = (props: { name: string, setName: (name: string) => void }) => {
 
                 <li className="nav-item active">
                     <Button.Group>
-                        <Button leftIcon={<IconLogin />} size="md" variant="light" color="cyan" radius="xl" component={Link} to="/login">
+                        <Button leftIcon={<IconLogin />} size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/login">
                             Войти
                         </Button>
-                        <Button leftIcon={<IconLogout />} size="md" variant="light" color="cyan" radius="xl" component={Link} to="/register">
+                        <Button leftIcon={<IconLogout />} size="md" variant="light" color="cyan" className='btn-cr' radius="xl" component={Link} to="/register">
                             Зарегистрироваться
                         </Button>
                     </Button.Group>
@@ -40,7 +40,7 @@ const Navpanel = (props: { name: string, setName: (name: string) => void }) => {
         menu = (
             <ul className="navbar-nav ">
                 <li className="nav-item active">
-                    <Button component={Link} to="/login" onClick={logout}>
+                    <Button component={Link} to="/login" className='btn-cr' onClick={logout}>
                         Logout
                     </Button>
                 </li>
@@ -52,7 +52,9 @@ const Navpanel = (props: { name: string, setName: (name: string) => void }) => {
     return (
         <nav className="navbar navbar-expand-md ">
             <div className="container-fluid">
-                <Link to="/" className="navbar-brand">Home</Link>
+                <Link to="/home" color="#EDF5E1" className="navbar-brand tx">
+                    <IconHome />
+                    Главная</Link>
 
 
                 {menu}
