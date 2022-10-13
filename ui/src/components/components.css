@@ -18,7 +18,7 @@
     background: url(src/assets/pattern.png), linear-gradient(to right, var(--color1) 0%, var(--color2) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#32fc46', endColorstr='#7db9e8', GradientType=1);
     background-size: cover;
-   
+
     padding-bottom: 30px;
 }
 
@@ -28,22 +28,27 @@ nav {
     padding-top: 25px;
     padding-bottom: 25px;
     color: colo;
-    
+
 }
+
 .tx {
-color : var(--color1);
-font-weight: bold;
+    color: var(--color1);
+    font-weight: bold;
 
 }
 
 .tx-header {
-    color : var(--color5);
-    font-size: 175%;
+    color: var(--color5);
+    font-size: 200%;
     font-weight: bold;
+    text-shadow: -2px 2px 0px #00e6e6,
+        -4px 4px 0px #01cccc,
+        -6px 6px 0px #00bdbd;
+
 }
 
 .btn-cr {
 
-color: #05386B;
+    color: #05386B;
 
 }

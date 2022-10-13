@@ -47,7 +47,8 @@ const Login = (props: { setName: (name: string) => void }) => {
                             <div className='Auth-form'>
                                 <div className='Auth-form-content' >
                                     <h3 className="Auth-form-title tx">Вход в систему</h3>
-                                    <form onSubmit={submit}>
+                                    <div className="form-shadow">
+                                        <form onSubmit={submit}>
                                         <label className='tx'>Почта </label>
                                         
                                         <TextInput
@@ -72,6 +73,8 @@ const Login = (props: { setName: (name: string) => void }) => {
                                         <br></br>
                                         <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" className='btn-cr' color="cyan" radius="xl" type="submit">Войти </Button>
                                     </form>
+                                    </div>
+                                    
                                 </div>
                            
 
