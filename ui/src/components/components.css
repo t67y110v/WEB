@@ -52,3 +52,99 @@ nav {
     color: #05386B;
 
 }
+
+.spacer {
+     aspect-ratio: 900/600 ;
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+}
+.layer1 {
+    background-image: url(./layer/layer.svg);
+}
+
+
+.bg-1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bg-1 svg {
+    position: relative;
+    display: block;
+    width: calc(137% + 1.3px);
+    height: 271px;
+}
+
+.bg-1 .shape-fill {
+    fill: var(--color1);
+}
+
+.bg-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bg-2 svg {
+    position: relative;
+    display: block;
+    width: calc(134% + 1.3px);
+    height: 118px;
+}
+
+.bg-2 .shape-fill {
+    fill: var(--color2);
+}
+
+.bg-3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bg-3 svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 81px;
+}
+
+.bg-3 .shape-fill {
+    fill: var(--color3);
+}
+
+.bg-4 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.bg-4 svg {
+    position: relative;
+    display: block;
+    width: calc(300% + 1.3px);
+    height: 200px;
+}
+
+.bg-4 .shape-fill {
+    fill: var(--color4);
+}

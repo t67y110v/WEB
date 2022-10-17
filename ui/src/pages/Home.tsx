@@ -1,22 +1,23 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
+import './pages.css'
 
 const Home = (props: { name: string }) => {
 
-useEffect(()=> {
-    (
-        async () =>{
-            await fetch('http://localhost:4000/api/user', {
-                method: 'GET',
-                headers: {'Content-Type': 'application/json'},
-                credentials: 'include',
-            });
-        }
-    )()
-})
-    
+    useEffect(() => {
+        (
+            async () => {
+                await fetch('http://localhost:4000/api/user', {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                });
+            }
+        )()
+    })
 
 
-   
+
+
 
 
     return (
@@ -33,7 +34,7 @@ useEffect(()=> {
                 </div>
             </div>
 
-
+            
         </div>
 
     );

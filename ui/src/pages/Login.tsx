@@ -4,6 +4,9 @@ import { Modal, Button, Group, TextInput, PasswordInput } from "@mantine/core"
 import { IconLogin, IconLock, IconAt } from '@tabler/icons';
 import './pages.css'
 
+
+
+
 const Login = (props: { setName: (name: string) => void }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -35,24 +38,20 @@ const Login = (props: { setName: (name: string) => void }) => {
 
 
     return (
-        <div className="container-fluid">
 
+        <div className="container-fluid">
             <div className="row justify-content-md">
                 <div className="col-4"> </div>
-                    <div className="col-4">
-
-                        <div className="Auth-form-container">
-
-
-                            <div className='Auth-form'>
-                                <div className='Auth-form-content' >
-                                    <h3 className="Auth-form-title tx">Вход в систему</h3>
-                                    <div className="form-shadow">
-                                        <form onSubmit={submit}>
+                <div className="col-4">
+                    <div className="Auth-form-container">
+                        <div className='Auth-form'>
+                            <div className='Auth-form-content' >
+                                <h3 className="Auth-form-title tx">Вход в систему</h3>
+                                <div className="form-shadow">
+                                    <form onSubmit={submit}>
                                         <label className='tx'>Почта </label>
-                                        
                                         <TextInput
-                                        icon={<IconAt size={16} />}
+                                            icon={<IconAt size={16} />}
                                             required
                                             mb={12}
                                             variant="filled"
@@ -62,7 +61,7 @@ const Login = (props: { setName: (name: string) => void }) => {
                                         />
                                         <label className='tx'>Пароль</label>
                                         <PasswordInput
-                                         icon={<IconLock size={16} />}
+                                            icon={<IconLock size={16} />}
                                             variant="filled"
                                             required
                                             mb={12}
@@ -73,28 +72,15 @@ const Login = (props: { setName: (name: string) => void }) => {
                                         <br></br>
                                         <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" className='btn-cr' color="cyan" radius="xl" type="submit">Войти </Button>
                                     </form>
-                                    </div>
-                                    
                                 </div>
-                           
-
-
-
-
+                            </div>
                         </div>
-
                     </div>
                 </div>
                 <div className="col-4">
-
                 </div>
             </div>
-
-
-
         </div>
-
-
     )
 }
 

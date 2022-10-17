@@ -43,6 +43,22 @@
 
     }
 
+    .blob-motion {
+      position: absolute;
+      transform: translateY(-20%);
+      z-index: 0;
+    }
+
+    .blob-content {
+      z-index: 1;
+    }
+
+    .blobs {
+      width: 100%;
+      background: url('./blobs.svg') no-repeat bottom / cover;
+    }
+
+
   .btn-cr {
 
     color: #05386B;
@@ -57,4 +73,25 @@
     padding-top: 6%;
     padding-bottom: 6%;
     background-color: var(--color3);
+}
+
+.custom-shape-divider-bottom-1666038648 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1666038648 svg {
+  position: relative;
+  display: block;
+  width: calc(135% + 1.3px);
+  height: 123px;
+}
+
+.custom-shape-divider-bottom-1666038648 .shape-fill {
+  fill: #887979;
 }

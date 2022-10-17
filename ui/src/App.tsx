@@ -4,6 +4,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navpanel from "./components/navpanel";
 import MyHeader from './components/header';
+import MyFooter from './components/footer';
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
@@ -48,6 +49,7 @@ function App() {
 
 
       </BrowserRouter>
+      <MyFooter></MyFooter>
     </div>
   )
 
