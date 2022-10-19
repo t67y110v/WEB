@@ -10,9 +10,9 @@
 - [Bootstrap 5](https://getbootstrap.com/)
 
 
-
-## Backend go-fiber
-## Frontend React-TypeScript-Vite-Bootstrap-Mantine
+#
+* Backend go-fiber
+* Frontend React-TypeScript-Vite-Bootstrap-Mantine
 
 
 ## Использование 
@@ -21,6 +21,8 @@
 ```go mod download```
 
 ```go run cmd/example/main.go```
+
+
 ### Docker
 ```shell
 docker-compose build
