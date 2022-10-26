@@ -23,7 +23,7 @@
 ```go run cmd/example/main.go```
 
 
-### Docker
+## Docker
 ```shell
 docker-compose build
 docker-compose up
