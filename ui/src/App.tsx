@@ -8,6 +8,7 @@ import MyFooter from './components/footer';
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import InputForm from "./pages/InputForm";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="/home" element={<Home name={name} />} />
             <Route path="/login" element={<Login setName={setName} />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/input" element = {<InputForm setName={setName} />}  />
             <Route path ="*" element= {<Register />}/>
           </Routes>
 
@@ -49,7 +51,7 @@ function App() {
 
 
       </BrowserRouter>
-      <MyFooter></MyFooter>
+      <MyFooter/>
     </div>
   )
 

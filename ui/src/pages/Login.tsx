@@ -36,7 +36,6 @@ const Login = (props: { setName: (name: string) => void }) => {
         return <Navigate to="/home" />
     }
 
-
     return (
 
         <div className="container-fluid">

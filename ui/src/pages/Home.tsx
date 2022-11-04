@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Modal, Button, Group, TextInput, PasswordInput } from "@mantine/core"
 import { IconLogin, IconLock, IconAt } from '@tabler/icons';
+import { Link } from "react-router-dom";
 import './pages.css'
 
 const Home = (props: { name: string }) => {
@@ -26,27 +27,73 @@ const Home = (props: { name: string }) => {
 
         <div className="container-fluid info-form-container">
             <div className="row space-around">
-                
-                <div className="col-5 info-container">
-                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus voluptatum nam placeat sequi exercitationem, cum consequuntur nulla dicta. At ullam expedita dolor culpa consectetur laudantium fugit quisquam earum, ipsa commodi.</h1>
-                    <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" className='btn-cr' color="cyan" radius="xl" type="submit">Использоввать</Button>
+                <div className="col-10 info-container">
+                    <h3>Вы можете сообщить о нежелательной реакции лекарственного препарата следующими способами:</h3>
+
                 </div>
-                
-                <div className="col-5 info-container">
+            </div>
+            <div className="row space-around-up">
+
+                <div className="col-5 info-container info-form-container-upper-button">
+                    <h3>
+                        Отправить json-файл для автоматической конвертации и отправки
+                    </h3>
+
+                </div>
+
+                <div className="col-5 info-container info-form-container-upper-button">
                     <div>
-                       
-                        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolor voluptas omnis et, sequi provident magni numquam aliquid unde mollitia maiores fugiat, facilis nemo. Nisi voluptas in quasi exercitationem sint.</h1>
-                        <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" className='btn-cr' color="cyan" radius="xl" type="submit">Узнать больше</Button>
+
+                        <h3>Отправить сообщение о нежелательной реакции вручную</h3>
+
                     </div>
                 </div>
-                
+
+            </div>
+            <div className="row space-around">
+                <div className="col-5"> <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/input">
+                    Перейти
+                </Button></div>
+                <div className="col-5">
+                    <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/input">
+                        Перейти
+                    </Button>
+                </div>
+            </div>
+            <div className="col-4">
+
             </div>
             <br></br>
-            <div className="row space-around">
-            <div className="col-10 info-container">
-                    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus voluptatum nam placeat sequi exercitationem, cum consequuntur nulla dicta. At ullam expedita dolor culpa consectetur laudantium fugit quisquam earum, ipsa commodi.</h1>
-               
+            <div className="row space-around-up">
+
+                <div className="col-5 info-container info-form-container-upper-button">
+                    <h3>
+                        Направить API запрос используя REST
+                    </h3>
+
                 </div>
+
+                <div className="col-5 info-container info-form-container-upper-button">
+                    <div>
+
+                        <h3>Направить API запрос gRPC </h3>
+
+                    </div>
+                </div>
+
+            </div>
+            <div className="row space-around">
+                <div className="col-5"> <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/input">
+                    Узнать больше
+                </Button></div>
+                <div className="col-5">
+                    <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/input">
+                        Узнать больше
+                    </Button>
+                </div>
+            </div>
+            <div className="col-4">
+
             </div>
 
 

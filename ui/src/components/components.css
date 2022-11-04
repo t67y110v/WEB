@@ -37,6 +37,12 @@ nav {
 
 }
 
+.tx-1{
+color: var(--color1);
+font-weight: bold;
+
+}
+
 .tx-header {
     color: var(--color5);
     font-size: 200%;
@@ -62,6 +68,11 @@ nav {
 }
 .layer1 {
     background-image: url(./layer/layer.svg);
+}
+
+
+.mainlink {
+    text-align: justify;
 }
 
 

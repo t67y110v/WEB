@@ -14,10 +14,10 @@
     "@mantine/hooks": "^5.5.2",
     "@primer/octicons-react": "^17.6.0",
     "@tabler/icons": "^1.101.0",
+    "@types/react-router": "^5.1.19",
     "@types/react-router-dom": "^5.3.3",
+    "path-to-regexp": "^6.2.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.4.2",
     "swr": "^1.3.0"
   },
   "devDependencies": {
