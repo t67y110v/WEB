@@ -13,19 +13,24 @@ import InputForm from "./pages/InputForm";
 
 function App() {
 
+  const [token, setToken] = useState('');
   const [name, setName] = useState('');
-
   useEffect(() => {
     (
       async () => {
         const response = await fetch('http://localhost:4000/api/user', {
           headers: { 'Content-Type': 'application/json' },
           credentials: 'include',
+          method: 'POST',
+          body: JSON.stringify({
+            "token" : document.cookie.slice(4,document.cookie.length-1)
+          })
         });
 
         const content = await response.json();
 
         setName(content.name);
+        setToken(content.token)
       }
     )();
   });
@@ -35,15 +40,15 @@ function App() {
       <BrowserRouter>
 
 
-        <MyHeader name={name} setName={setName} />
-        <Navpanel name={name} setName={setName} />
+        <MyHeader name={token} setName={setToken} />
+        <Navpanel token={token} setToken={setToken} />
         <main className="form-signin">
           <Routes>
-            <Route path="/home" element={<Home name={name} />} />
-            <Route path="/login" element={<Login setName={setName} />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/input" element = {<InputForm setName={setName} />}  />
-            <Route path ="*" element= {<Register />}/>
+            <Route path="/home" element={<Home  name={name} />} />
+            <Route path="/login" element={<Login setToken={setToken} token={token} />} />
+            <Route path="/register" element={<Register setToken={setToken} token={token} />} />
+            <Route path="/input" element={<InputForm setName={setToken} />} />
+            <Route path="*" element={<Register  setToken={setToken} token={token} />} />
           </Routes>
 
         </main>
@@ -51,7 +56,7 @@ function App() {
 
 
       </BrowserRouter>
-      <MyFooter/>
+      <MyFooter />
     </div>
   )
 

@@ -13,6 +13,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 )
 
+// authUserHandler
 func (s *server) authUserHandler(c *fiber.Ctx) error {
 	u := &model.User{
 		Email:       c.FormValue("email"),

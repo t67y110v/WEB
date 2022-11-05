@@ -5,47 +5,38 @@ import './components.css'
 import { IconLogin, IconLogout, IconHome } from '@tabler/icons';
 
 
-const Navpanel = (props: { name: string, setName: (name: string) => void }) => {
+const Navpanel = (props: { token: string, setToken: (token: string) => void }) => {
     const logout = async () => {
-        await fetch('http://localhost:4000/api/logout', {
-            method: "POST",
-            headers: { 'Content-Type': 'application-json' },
-            credentials: 'include',
-        })
-        props.setName('')
+        document.cookie = "jwt=;"
+        props.setToken('')
     }
     let menu
-    if (props.name === '') {
+    if (document.cookie.slice(4, document.cookie.length - 1) == "") {
         menu = (
-            <ul className="navbar-nav ">
-                <li className="nav-item active">
-                    <Button.Group>
-                        <Button leftIcon={<IconLogin />} size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/login">
-                            Войти
-                        </Button>
-                        <Button leftIcon={<IconLogout />} size="md" variant="light" color="cyan" className='btn-cr' radius="xl" component={Link} to="/register">
-                            Зарегистрироваться
-                        </Button>
-                    </Button.Group>
-                </li>
-            </ul>
+            <div className="container-fluid">
+                <div className="col-10"></div>
+                <div className="col-2">
+                    <ul className="navbar-nav ">
+                        <li className="nav-item active">
+                            <Button.Group>
+                                <Button leftIcon={<IconLogin />} size="md" variant="light" color="cyan" radius="xl" className='btn-cr' component={Link} to="/login">
+                                    Войти
+                                </Button>
+                                <Button leftIcon={<IconLogout />} size="md" variant="light" color="cyan" className='btn-cr' radius="xl" component={Link} to="/register">
+                                    Зарегистрироваться
+                                </Button>
+                            </Button.Group>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         )
     } else {
         menu = (
-            <ul className="navbar-nav ">
-                <li className="nav-item active">
-                    <Button leftIcon={<IconLogout />} size="md" variant="light" color="cyan" radius="xl" component={Link} to="/login" className='btn-cr' onClick={logout}>
-                        Logout
-                    </Button>
-                </li>
-            </ul>
-        )
-    }
-    return (
-        <nav className="navbar navbar-expand-md ">
             <div className="container-fluid">
                 <div className="col-1">
                     <NavLink
+
                         color="#EDF5E1"
                         component={Link} to="/home"
                         label="Главная"
@@ -53,11 +44,39 @@ const Navpanel = (props: { name: string, setName: (name: string) => void }) => {
 
                         icon={<IconHome size={24} />}
                     />
+
                 </div>
+                <div className="col-1">
+                    <NavLink
 
+                        color="#EDF5E1"
+                        component={Link} to="/home"
+                        label="История"
+                        className='tx-1'
 
-                {menu}
+                        icon={<IconHome size={24} />}
+                    />
+                </div>
+                <div className="col-9"></div>
+                <ul className="navbar-nav ">
+                    <li className="nav-item active">
+                        <Button leftIcon={<IconLogout />} size="md" variant="light" color="cyan" radius="xl" component={Link} to="/login" className='btn-cr' onClick={logout}>
+                            Выход
+                        </Button>
+                    </li>
+                </ul>
+
             </div>
+        )
+    }
+
+    return (
+        <nav className="navbar navbar-expand-md ">
+
+
+
+            {menu}
+
         </nav>
     )
 }

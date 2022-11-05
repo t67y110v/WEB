@@ -7,7 +7,7 @@ import './pages.css'
 
 
 
-const Login = (props: { setName: (name: string) => void }) => {
+const Login = (props: { token:string ,setToken: (token: string) => void }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
@@ -29,7 +29,9 @@ const Login = (props: { setName: (name: string) => void }) => {
         const content = await response.json();
 
         setRedirect(true);
-        props.setName(content.name);
+        props.setToken(content.token);
+        console.log(content.token)
+        document.cookie = "jwt="+content.token +";"
     }
 
     if (redirect) {
@@ -69,7 +71,17 @@ const Login = (props: { setName: (name: string) => void }) => {
                                             onChange={e => setPassword(e.target.value)}
                                         />
                                         <br></br>
-                                        <Button leftIcon={<IconLogin />} fullWidth size="md" variant="light" className='btn-cr' color="cyan" radius="xl" type="submit">Войти </Button>
+                                        <Button
+                                            leftIcon={<IconLogin />}
+                                            fullWidth
+                                            size="md"
+                                            variant="light"
+                                            className='btn-cr'
+                                            color="cyan"
+                                            radius="xl"
+                                            type="submit">
+                                            Войти
+                                        </Button>
                                     </form>
                                 </div>
                             </div>

@@ -16,8 +16,8 @@ func Start(config *Config) error {
 	defer db.Close()
 	store := store.New(db)
 	server := newServer(store, config)
-	StartServerWithGracefulShutdown(server, config.BindAddr)
-	return nil
+	//StartServerWithGracefulShutdown(server, config.BindAddr)
+	return server.router.Listen(config.BindAddr)
 }
 
 func newDB(databaseURL string) (*sql.DB, error) {

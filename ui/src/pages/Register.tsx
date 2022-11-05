@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { Modal, Button, Group, TextInput, PasswordInput } from "@mantine/core"
 import { IconLogin, IconLock, IconAt, IconUser } from '@tabler/icons';
 
-const Register = () => {
+const Register = (props: { token:string ,setToken: (token: string) => void }) => {
     const [name, setName] = useState('');
     const [seccondname, setSeccondName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,7 +15,7 @@ const Register = () => {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        await fetch('http://localhost:4000/api/register', {
+        const response =  await fetch('http://localhost:4000/api/register', {
             method: 'POST',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' },
@@ -26,7 +26,6 @@ const Register = () => {
                 seccondname,
             })
         });
-        setRedirect(true);
     }
 
     if (redirect) {

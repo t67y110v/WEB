@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
@@ -9,26 +10,28 @@ import (
 
 type TokenMetadata struct {
 	Expires int64
+	Id      float64
 }
 
-func ExtractTokenMetaData(c *fiber.Ctx) (*TokenMetadata, error) {
-	token, err := verifyToken(c)
+func ExtractTokenMetaData(t string) (int64, float64, error) {
+	token, err := verifyToken(t)
 	if err != nil {
-		return nil, err
+		fmt.Println("verify error")
+		return 0, 0, err
 	}
 	claims, ok := token.Claims.(jwt.MapClaims)
 	if ok && token.Valid {
 		expries := int64(claims["exp"].(float64))
-		return &TokenMetadata{
-			Expires: expries,
-		}, nil
+		id := float64(claims["id"].(float64))
+		return expries, id, nil
 	}
-	return nil, err
+	fmt.Println("exctract error")
+	return 0, 0, err
 }
 
 func extractToken(c *fiber.Ctx) string {
 
-	bearToken := c.Get("Authorization")
+	bearToken := c.Get("jwt")
 	onlyToken := strings.Split(bearToken, " ")
 	if len(onlyToken) == 2 {
 		return onlyToken[1]
@@ -37,8 +40,7 @@ func extractToken(c *fiber.Ctx) string {
 	return ""
 }
 
-func verifyToken(c *fiber.Ctx) (*jwt.Token, error) {
-	tokenString := extractToken(c)
+func verifyToken(tokenString string) (*jwt.Token, error) {
 	token, err := jwt.Parse(tokenString, jwtKeyFunc)
 	if err != nil {
 		return nil, err
@@ -47,5 +49,5 @@ func verifyToken(c *fiber.Ctx) (*jwt.Token, error) {
 }
 
 func jwtKeyFunc(token *jwt.Token) (interface{}, error) {
-	return []byte("SECRET"), nil
+	return []byte("secret"), nil
 }
