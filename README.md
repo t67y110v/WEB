@@ -22,6 +22,8 @@
 
 ```go run cmd/example/main.go```
 
+```npm run dev```
+
 
 ## Docker
 ```shell
