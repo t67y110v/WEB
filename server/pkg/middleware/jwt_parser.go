@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"fmt"
+	//"fmt"
 	"strings"
 
 	"github.com/gofiber/fiber/v2"
@@ -16,7 +16,7 @@ type TokenMetadata struct {
 func ExtractTokenMetaData(t string) (int64, float64, error) {
 	token, err := verifyToken(t)
 	if err != nil {
-		fmt.Println("verify error")
+		//fmt.Println("verify error")
 		return 0, 0, err
 	}
 	claims, ok := token.Claims.(jwt.MapClaims)
@@ -25,7 +25,7 @@ func ExtractTokenMetaData(t string) (int64, float64, error) {
 		id := float64(claims["id"].(float64))
 		return expries, id, nil
 	}
-	fmt.Println("exctract error")
+	//fmt.Println("exctract error")
 	return 0, 0, err
 }
 

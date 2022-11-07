@@ -4,7 +4,7 @@ import (
 	//"html/template"
 
 	"bytes"
-	"fmt"
+	//"fmt"
 	"strconv"
 
 	"encoding/json"
@@ -106,7 +106,7 @@ func (s *server) Login(c *fiber.Ctx) error {
 	})
 	token, err := claims.SignedString([]byte("secret"))
 
-	fmt.Println(token)
+	//fmt.Println(token)
 
 	if err != nil {
 		c.Status(fiber.StatusInternalServerError)
